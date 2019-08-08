@@ -1,0 +1,49 @@
+<html>
+<head>
+  <link rel="stylesheet" href="./lib/css/github.css">
+  <script src="./pyodide.js"></script>
+  <script src="./highlight.pack.js"></script>
+  <link rel="stylesheet" href="css/pyodide.css">
+</head>
+
+<body>
+  <div class="editors">
+    <div class="editor" contenteditable="true">
+      <div>books = [</div>
+      <div>&nbsp;&nbsp;&nbsp;&nbsp;{'id': 33, 'title': 'Mastering django', 'author': 'Nigel George', 'year': 2015, 'img': 'http://t0.gstatic.com/images?q=tbn:ANd9GcQNFQPQOtwcripPkqGUtcvZVv6lpygPUVkcHORKJf5iu2s3gtYo'},</div>
+      <div>&nbsp;&nbsp;&nbsp;&nbsp;{'id': 34, 'title': '&nbsp;Flask web development', 'author': 'Miguel Grinberg', 'year': 2018, 'img': 'https://www.oreilly.com/library/cover/9781491991725/360h/'},</div>
+      <div>&nbsp;&nbsp;&nbsp;&nbsp;{'id': 35, 'title': 'Python cookbook', 'author': 'Brian Jones', 'year': 2013, 'img': 'https://covers.oreillystatic.com/images/0636920027072/lrg.jpg'},</div>
+      <div>&nbsp;&nbsp;&nbsp;&nbsp;{'id': 37, 'title': 'Learn to program with Minecraft', 'author': 'Craig Richardson', 'year': 2015, 'img': 'http://t3.gstatic.com/images?q=tbn:ANd9GcTXtSlMxgBsXzhj4srzHMu28mYelxrekpXKAQrImEBhEPqMiifX'},</div>
+      <div>]</div>
+      <br/>
+      <div>main_title = 'skoob emos'</div>
+      <div>def truncate_text(s, l = 10):</div>
+      <div>&nbsp;&nbsp;&nbsp;&nbsp;return s[0:l-3] + '...' if len(s) > l else s</div>
+      <br/>
+      <div></div>
+      <div>def reverse_filter(s):</div>
+      <div>&nbsp;&nbsp;&nbsp;&nbsp;return s[::-1]</div>
+      <br/>
+      <div></div>
+      <div>env.filters['truncate_text'] = truncate_text</div>
+      <div>env.filters['reverse_filter'] = reverse_filter</div>
+    </div>
+    <textarea class="template-editor">
+<h1>{{main_title|title|reverse_filter}}</h1>
+<div class="container">
+{% for book in books|sort(attribute='id') %}
+<p>
+  <span>({{loop.index}})</span>
+  <span>{{book.title|striptags|title}}</span>
+  <img src="{{book.img}}" alt="{{book.title}}" class="book"/>
+</p>
+{% endfor %}
+</div>
+</textarea>
+  </div>
+  <button id="run">Run Code</button>
+  <div class="loader"></div>
+  <div id='result'></div>
+  <script src="./js/pyodide_scripts.js"></script>
+</body>
+</html>

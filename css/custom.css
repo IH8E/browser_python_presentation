@@ -1,0 +1,37 @@
+.uppercase {
+  text-transform: uppercase;
+}
+
+.reveal h1 {
+  letter-spacing: 0.01em;
+}
+
+.logo--antida {
+  margin-top: 50px;
+}
+
+.reveal section img {
+  border: none;
+  background: none;
+  box-shadow: none;
+}
+
+.w100 {
+  width: 100%!important;
+}
+
+.reveal pre {
+  box-shadow: none;
+}
+
+.reveal iframe {
+  min-height: 600px!important;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.full .slides {
+  width: 100%!important;
+}
