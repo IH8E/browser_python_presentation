@@ -25,7 +25,7 @@
 }
 
 .reveal iframe {
-  min-height: 600px!important;
+  min-height: 575px!important;
 }
 
 .text-center {
@@ -34,4 +34,8 @@
 
 .full .slides {
   width: 100%!important;
+}
+
+.full a > h3 {
+  color: inherit;
 }
